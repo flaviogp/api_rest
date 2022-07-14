@@ -48,14 +48,13 @@ class UserController {
       if (!req.params.id) {
         return res.status(400).json({ errors: ['Id nao enviado'] });
       }
-      const oldUser = await User.findByPk(req.params.id);
-      if (!oldUser) {
+      const user = await User.findByPk(req.params.id);
+      if (!user) {
         return res.status(400).json({ errors: ['usuario nao existe'] });
       }
-      const updatedUser = await oldUser.update(req.body);
+      const updatedUser = await user.update(req.body);
       return res.json(updatedUser);
     } catch (e) {
-      console.log(e);
       return res.status(400).json({
         errors: e.errors.map((err) => err.message),
       });
