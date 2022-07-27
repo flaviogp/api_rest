@@ -16,5 +16,6 @@ module.exports = {
     'no-unused-expressions': 'off',
     'import/first': 'off',
     'no-param-reassign': 'off',
+    'object-curly-newline': 'off',
   },
 };
