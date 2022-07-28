@@ -18,7 +18,7 @@ class App {
   }
 
   middlewares() {
-    this.app.use(express.urlencoded({ extends: true }));
+    this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
   }
 

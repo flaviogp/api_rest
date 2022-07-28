@@ -84,9 +84,9 @@ class AlunoController {
           errors: ['Aluno nao existe!'],
         });
       }
-
-      res.json(`O Aluno "${aluno.nome}" foi deletado com sucesso!`);
-      return aluno.destroy();
+      const { nome } = aluno;
+      await aluno.destroy();
+      return res.json(`O Aluno ${nome} foi deletado com sucesso!`);
     } catch (e) {
       return res.status(400).json({
         errors: e.errors.map((err) => err.message),
