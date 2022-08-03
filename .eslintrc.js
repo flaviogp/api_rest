@@ -17,5 +17,7 @@ module.exports = {
     'import/first': 'off',
     'no-param-reassign': 'off',
     'object-curly-newline': 'off',
+    'quote-props': 'off',
+    'camelcase': 'off',
   },
 };
